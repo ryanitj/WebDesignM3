@@ -1,0 +1,557 @@
+* {
+    
+    scroll-behavior: smooth;
+}
+
+body,
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+a,
+button {
+    cursor: pointer;
+    ;
+}
+
+
+
+.grid {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 100vh 180vh auto auto auto 150px;
+    grid-template-areas:
+        "header"
+        "main"
+        "character-about"
+        "episodes"
+        "news"
+        "contact"
+        "footer";
+    width: 100%;
+
+   
+
+}
+
+
+/* #header {
+    z-index: 999;
+    grid-area: header;
+    height: 50px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: flex;
+    align-items: center;
+    background-color: #00050D;
+    justify-content: space-around;
+
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    justify-content: space-around;
+
+    @media screen and (max-width:550px) {
+        display: none;
+    }
+
+} */
+
+.logo-container {
+    width: 60px;
+}
+
+.logo-container>img {
+
+    max-width: 100%;
+    height: auto;
+}
+
+
+header {
+    grid-area: header;
+    text-align: center;
+    width: 100%;
+    z-index: 999;
+    padding: .4rem;
+    position: fixed;
+    background: #00050D;
+  }
+  
+  header input.menu-toggle {
+    display: none;
+  }
+  
+  nav {
+    position: absolute;
+    text-align: center;
+    top: 100%;
+    left: 0;
+    background: #00050D;
+    width: 100%;
+    -webkit-transform: scale(1, 0);
+            transform: scale(1, 0);
+    -webkit-transition: -webkit-transform 400ms ease-in-out;
+    transition: -webkit-transform 400ms ease-in-out;
+    transition: transform 400ms ease-in-out;
+    transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+    -webkit-transform-origin: top;
+            transform-origin: top;
+  }
+  
+  nav ul {
+    margin: 0;
+    margin-top: 14%;
+    padding: 0;
+    height: 90vh;
+  }
+  
+  nav li {
+    margin-left: 1rem;
+    height: 10%;
+    list-style: none;
+  }
+  
+  nav a {
+    text-transform: uppercase;
+    opacity: 0;
+  }
+  
+  .nav-heading {
+    font-size: 3rem;
+  }
+  
+  .menu-toggle:checked ~ nav {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  
+  .menu-toggle:checked ~ nav a {
+    opacity: 1;
+    -webkit-transition: opacity 200ms ease-in 100ms;
+    transition: opacity 200ms ease-in 100ms;
+  }
+  
+  .menu-nav-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-right: 2rem;
+  }
+  
+  .menu-nav-toggle:hover, .menu-nav-toggle:focus {
+    cursor: pointer;
+  }
+  
+  .menu-nav-toggle span, .menu-nav-toggle span:before, .menu-nav-toggle span:after {
+    display: block;
+    background: white;
+    width: 2rem;
+    border-radius: 0.125rem;
+    position: relative;
+    height: 0.25rem;
+  }
+  
+  .menu-nav-toggle span:before, .menu-nav-toggle span:after {
+    content: '';
+    position: absolute;
+  }
+  
+  .menu-nav-toggle span:before {
+    top: 0.8rem;
+  }
+  
+  .menu-nav-toggle span:after {
+    bottom: 0.8rem;
+  }
+  
+  @media screen and (min-width: 50rem) {
+    .menu-nav-toggle {
+      display: none;
+    }
+    header {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr auto minmax(37.5rem, 3fr) 1fr;
+          grid-template-columns: 1fr auto minmax(37.5rem, 3fr) 1fr;
+    }
+    .nav-brand {
+      -ms-grid-column: 2;
+      -ms-grid-column-span: 1;
+      grid-column: 2/3;
+    }
+    nav {
+      all: unset;
+      -ms-grid-column: 3;
+      -ms-grid-column-span: 1;
+      grid-column: 3/4;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+    nav ul {
+      margin-top: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      height: auto;
+    }
+    nav li {
+      margin-bottom: 0;
+      margin-left: 2rem;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      height: auto;
+    }
+    nav li {
+      margin-bottom: 0;
+      margin-left: 2rem;
+    }
+    nav a {
+      opacity: 1;
+    }
+  }
+  /*# sourceMappingURL=style.css.map */
+
+
+#main {
+    grid-area: main;
+    background-image: url("./images/background.jpg");
+    background-position: 0px 1000px 0px 0px;
+    filter: contrast(125%);
+    position: relative;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-clip: content-box;
+    background-size: cover;
+    flex-direction: column;
+    z-index: 1;
+    justify-content: center;
+
+}
+
+#main::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 98%);
+
+
+}
+
+#main::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 33%);
+}
+
+.introduction-container {
+    padding-top: 18dvh;
+    color: white;
+
+    .sub-title {
+        font-weight: bold;
+    }
+
+    .title {
+        letter-spacing: 1px !important;
+    }
+
+    .sub-line-text {
+        font-weight: 500;
+    }
+
+}
+
+.group-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+    .buttonIcon {
+        border-radius: 999px;
+        width: 50px;
+        transition: 0.1s all;
+        height: 50px;
+        background-color: #4A4D53;
+        padding: 10px;
+        filter: invert(-1);
+    }
+
+    .buttonIcon>img {
+        filter: invert(1);
+    }
+
+    .buttonIcon>img:hover {
+        filter: invert(0);
+    }
+
+    .buttonIcon:hover {
+        background-color: white;
+    }
+}
+
+#footer {
+    grid-area: footer;
+    background-color: #00050D;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#ca {
+    grid-area: character-about;
+    height: 100%;
+    background-color: #00050D;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-ca {
+    width: 92%;
+    height: 80%;
+    background-image: url("https://m.media-amazon.com/images/G/01/pv_starlight/theboys-s1-4f31a4b5-56d1-45ee-a26e-b55c48f3e99f/V2/THBY_S1_Butcher.jpg");
+    background-size: contain;
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+    filter: brightness(1.2);
+
+
+    
+    background-position-x: right;
+}
+
+
+
+.card-ca:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 98%);
+}
+
+.card-ca-content {
+    color: white;
+    font-weight: 500;
+    padding: 70px !important;
+}
+
+.card-ca-content >
+h5,
+h2 {
+    font-weight: bold;
+}
+
+.card-ca2 {
+    width: 92%;
+    height: 80%;
+    background-image: url("https://m.media-amazon.com/images/G/01/pv_starlight/theboys-s1-4f31a4b5-56d1-45ee-a26e-b55c48f3e99f/V2/SevenCarouselImages_S1_1920x1080_Homelander.jpg");
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+    filter: brightness(1.2);
+    
+    background-position-x: right;
+}
+
+.card-ca2:after {
+
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 98%);
+
+}
+
+#ep {
+    grid-area: episodes;
+    background-color: #00050D;
+    padding-block: 30px;
+
+    @media screen and (max-width:700px) {
+        padding-top: 160px;
+    }
+}
+
+
+.card-episode-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-inline: 60px;
+    cursor: pointer;
+
+    @media screen and (max-width:700px) {
+        padding-inline: 20px;
+    }
+}
+
+.card-episode {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    transition: 0.3s all;
+    padding: 20px;
+
+    @media screen and (max-width:700px) {
+        flex-direction: column;
+        padding:20px 20px;
+
+    }
+}
+
+.card-episode:hover {
+    background-color: rgba(218, 223, 225, 0.2);
+    border-radius: 20px;
+    transform: translate(10px, 0px);
+}
+
+.episode-image {
+    @media screen and (max-width:700px) {
+        display: flex;
+        justify-content: center;
+
+    }
+}
+
+.episode-image>img {
+    border-radius: 20px;
+    max-width: 300px;
+}
+
+.episode-description {
+    padding: 10px 20px;
+}
+
+.episode-description>h3 {
+    font-weight: bold;
+}
+
+.episode-description>p {
+    color: #AAAAAA;
+}
+
+.episode-description>h4 {
+    color: #AAAAAA;
+}
+
+#news {
+    background-color: #00050D;
+}
+
+#news::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 33%);
+
+}
+
+.news-main {
+    background-color: rgba(218, 223, 225, 0.2);
+    border-radius: 20px;
+    margin-right: 10px;
+    padding: 20px !important;
+
+    @media screen and (max-width:700px) {
+        max-width: initial !important;
+        margin-bottom: 20px;
+    }
+}
+
+
+.news-aside {
+    background-color: rgba(218, 223, 225, 0.2);
+    border-radius: 20px;
+    padding: 20px !important;
+}
+
+.new-title {
+    font-weight: bold;
+    color: white;
+}
+
+.card-new {
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.card-new:hover {
+    color: white;
+}
+
+#contact {
+    grid-area: contact;
+    background-color: #00050D;
+    padding-block: 100px;
+}
+
+.contact-title {
+    color: white;
+}
+
+input, textarea {
+    color: white;
+}
